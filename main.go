@@ -29,7 +29,7 @@ func main() {
 	logger := log.NewConsoleLogger(*cfg.LogLevel)
 
 	// Startup Header for log
-	logger.Raw(">>>>> vincent-demo v%s <<<<<", VERSION)
+	logger.Raw(">>>>> vincent-demo v%s <<<<<", Version)
 	logger.Raw("%s", time.Now())
 
 	// Create vincent server
@@ -50,7 +50,7 @@ func main() {
 
 	// This is an example controller
 	svr.AddController("/", func(context *vincent.Context) (bool, error) {
-		context.Output["version"] = "1.0.1"
+		context.Output["version"] = fmt.Sprintf("%s", Version)
 		context.Output["port"] = *cfg.HTTPPort
 		return true, nil
 	})

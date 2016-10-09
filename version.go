@@ -1,5 +1,6 @@
 package main
 
 const (
-	VERSION = "1.0.0"
+  // Version is the semantic version string of vincent-demo
+	Version = "1.0.0"
 )

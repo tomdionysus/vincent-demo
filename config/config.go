@@ -7,11 +7,13 @@ import (
 	"strconv"
 )
 
+// Config represents the config for the vincent-demo server
 type Config struct {
 	LogLevel *string
 	HTTPPort *uint
 }
 
+// NewConfig returns a new Config parsed from the environment and command line flags.
 func NewConfig() *Config {
 	c := &Config{}
 
@@ -28,13 +30,14 @@ func NewConfig() *Config {
 	return c
 }
 
-func (me *Config) Validate() []error {
+// Validate checks the config and returns a slice of errors if any.
+func (cfg *Config) Validate() []error {
 	out := []error{}
 
-	if *me.LogLevel == "" {
+	if *cfg.LogLevel == "" {
 		out = append(out, errors.New("-loglevel or ENV LOG_LEVEL must be specified"))
 	}
-	if me.HTTPPort == nil {
+	if cfg.HTTPPort == nil {
 		out = append(out, errors.New("-port or ENV PORT must be specified"))
 	}
 
