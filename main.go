@@ -75,7 +75,7 @@ func main() {
 			case os.Interrupt:
 				fallthrough
 			case syscall.SIGTERM:
-				logger.Info("Signal %d recieved, shutting down", sig)
+				logger.Info("Signal %d received, shutting down", sig)
 				goto stop
 			}
 		}
