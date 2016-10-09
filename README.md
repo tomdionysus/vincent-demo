@@ -6,11 +6,33 @@ A simple example site using [Vincent](http://github.com/tomdionysus/vincent).
 
 If you don't have a golang development environment already, install [golang](http://golang.org).
 
-See [main.go](main.go) on how to bootstrap a vincent project - the example is a simple HTTP server, configured using the golang `flag` package. 
+This example is a simple HTTP server, configured using the golang `flag` package. 
+
+### Creating the Server
+
+To create the server, call `New` with an optional logger instance.
+
+In [main.go](main.go):
+
+```go
+  // Create vincent server
+  logger.Debug("Creating Server")
+  svr, err := vincent.New(logger)
+  if err!=nil { logger.Error("Cannot Create Server: %s", err); return }
+```
 
 ### Templates 
 
-Your site files should be in a directory ([templates](templates) in this example). Template files use the [handlebars](http://handlebarsjs.com/) format and should have the `.hbs` extension - all other files are served as-is.
+Your site files should be in a directory ([templates](templates) in this example). Template files use the [handlebars](http://handlebarsjs.com/) format and should have the `.hbs` extension - all other files are served as-is. Templates are loaded using the `LoadTemplates` function on `Server`.
+
+In [main.go](main.go):
+
+```go
+  // Load templates from the templates/ directory
+  logger.Debug("Loading Templates")
+  err = svr.LoadTemplates("","templates")
+  if err!=nil { logger.Error("Cannot load Templates: %s", err); return }
+```
 
 ### Controllers
 
@@ -42,6 +64,19 @@ In [index.html.hbs](templates/index.html.hbs):
         </nav>
         <h3 class="text-muted">Vincent v{{ version }}</h3>
       </div>
+```
+
+### Starting the server
+
+Starting the server causes Vincent to listen on the configured port and start serving requests. The Vincent server runs in its own goroutine, a call to `Start` will return immediately.
+
+In [main.go](main.go):
+
+```go
+  // Start the server on the configured port
+  logger.Debug("Starting HTTP Server")
+  svr.Start(fmt.Sprintf(":%d", *cfg.HTTPPort))
+  logger.Info("HTTP Listening on port %d", *cfg.HTTPPort)
 ```
 
 ## License
