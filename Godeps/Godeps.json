@@ -1,0 +1,38 @@
+{
+	"ImportPath": "github.com/tomdionysus/vincent-demo",
+	"GoVersion": "go1.6",
+	"GodepVersion": "v74",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/aymerick/raymond",
+			"Comment": "v2.0.1",
+			"Rev": "a2232af10b53ef1ae5a767f5178db3a6c1dab655"
+		},
+		{
+			"ImportPath": "github.com/aymerick/raymond/ast",
+			"Comment": "v2.0.1",
+			"Rev": "a2232af10b53ef1ae5a767f5178db3a6c1dab655"
+		},
+		{
+			"ImportPath": "github.com/aymerick/raymond/lexer",
+			"Comment": "v2.0.1",
+			"Rev": "a2232af10b53ef1ae5a767f5178db3a6c1dab655"
+		},
+		{
+			"ImportPath": "github.com/aymerick/raymond/parser",
+			"Comment": "v2.0.1",
+			"Rev": "a2232af10b53ef1ae5a767f5178db3a6c1dab655"
+		},
+		{
+			"ImportPath": "github.com/tomdionysus/vincent",
+			"Rev": "0f4ad05adb81ff9a75c67ba1f0a3d3bc80f0a116"
+		},
+		{
+			"ImportPath": "github.com/tomdionysus/vincent/log",
+			"Rev": "0f4ad05adb81ff9a75c67ba1f0a3d3bc80f0a116"
+		}
+	]
+}
