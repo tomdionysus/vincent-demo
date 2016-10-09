@@ -17,7 +17,7 @@ Controllers are registered on routes and executed when a request traverses the r
 
 **Example**: Here, we bind a controller to the root path `/` - meaning it will be executed on all requests. We set two context variables in `Output` - `version` and `port`. 
 
-```golang
+```go
   // This is an example controller
   svr.AddController("/", func(context *vincent.Context) (bool, error) {
     context.Output["version"]="1.0.1"
