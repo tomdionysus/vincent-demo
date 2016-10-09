@@ -9,6 +9,7 @@ If you don't have a golang development environment already, install [golang](htt
 See [main.go](main.go) on how to bootstrap a vincent project - the example is a simple HTTP server, configured using the golang `flag` package. 
 
 ### Templates 
+
 Your site files should be in a directory ([templates](templates) in this example). Template files use the [handlebars](http://handlebarsjs.com/) format and should have the `.hbs` extension - all other files are served as-is.
 
 ### Controllers
@@ -16,6 +17,8 @@ Your site files should be in a directory ([templates](templates) in this example
 Controllers are registered on routes and executed when a request traverses the route, before any templates are passed. All keys set in `Output` will be available to all templates under that route.
 
 **Example**: Here, we bind a controller to the root path `/` - meaning it will be executed on all requests. We set two context variables in `Output` - `version` and `port`. 
+
+In [main.go](main.go):
 
 ```go
   // This is an example controller
@@ -26,7 +29,7 @@ Controllers are registered on routes and executed when a request traverses the r
   })
 ```
 
-In the [index.html.hbs](templates/index.html.hbs) file, we use one of these variables using the standard handlebars format:
+In [index.html.hbs](templates/index.html.hbs):
 
 ```handlebars
       <div class="header clearfix">
