@@ -2,7 +2,7 @@
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/tomdionysus/vincent-demo)](https://goreportcard.com/report/github.com/tomdionysus/vincent-demo)
 
-A simple example site using [Vincent](http://github.com/tomdionysus/vincent). You can see the live demo at [https://vincentdemo.herokuapp.com](https://vincentdemo.herokuapp.com).
+A simple example site using [Vincent](http://github.com/tomdionysus/vincent). You can see the live demo at [http://www.vincentgo.org](http://www.vincentgo.org).
 
 ## Getting Started
 
